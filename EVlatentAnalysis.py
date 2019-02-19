@@ -35,9 +35,6 @@ VA = {
     3: V3A
 }
 
-# av = {1: TRAIN_AV_SP,
-#       2: SM_AV,
-#       3: CAR_AV_SP}
 
 avA = {
     1: 1,
@@ -96,7 +93,7 @@ probClass2 = exp(prob2)/(exp(prob1) + exp(prob2))
 probClass11 = Sum(probClass1, 'panelObsIter')/Sum(1, 'panelObsIter')
 probClass22 = Sum(probClass2, 'panelObsIter')/Sum(1, 'panelObsIter')
 
-# caseid starts from 1 to 1076
+# id starts from 1 to 1076
 metaIterator('personIter', '__dataFile__','panelObsIter', 'id')
 
 # Defines an itertor on the data
