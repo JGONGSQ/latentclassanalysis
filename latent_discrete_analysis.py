@@ -13,7 +13,7 @@ ASC_OPTION3 = Beta('ASC_OPTION3', 0.5, -10, 10, 1, 'OPTION3 constant;')
 number_of_alternatives = 3
 
 # list_of_classes = ['A']
-list_of_classes = ['A', 'B']
+list_of_classes = ['A', 'B', 'C']
 
 # alternative specific constant in each class
 asc_variables = ['ASC_OPTION']
