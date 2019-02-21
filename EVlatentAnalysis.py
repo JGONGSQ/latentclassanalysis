@@ -19,7 +19,7 @@ VEHICLE_OPTION2_PRICE_SCALED = DefineVariable('VEHICLE_OPTION2_PRICE_SCALED', al
 ######################################## Class A #############################################
 ASC_OPTION1_A = Beta('ASC_OPTION1_A', 0.5, -10, 10, 0, 'OPTION1 constant;')
 ASC_OPTION2_A = Beta('ASC_OPTION2_A', 0.5, -10, 10, 0, 'OPTION2 constant;')
-ASC_OPTION3_A = Beta('ASC_OPTION3_A', 0.5, -10, 10, 1,'OPTION3 constant;')
+ASC_OPTION3_A = Beta('ASC_OPTION3_A', 0, -10, 10, 1,'OPTION3 constant;')
 
 B_VEHICLE_PRICE_A = Beta('B_VEHICLE_PRICE_A', 0.5, -10, 10, 0, 'Vehicle Price')
 
@@ -27,7 +27,8 @@ B_VEHICLE_PRICE_A = Beta('B_VEHICLE_PRICE_A', 0.5, -10, 10, 0, 'Vehicle Price')
 V1A = ASC_OPTION1_A + B_VEHICLE_PRICE_A * VEHICLE_OPTION1_PRICE_SCALED
 V2A = ASC_OPTION2_A + B_VEHICLE_PRICE_A * VEHICLE_OPTION2_PRICE_SCALED
 V3A = ASC_OPTION3_A
-
+print("####################### This is the V1A", V1A)
+print("####################### This is the V1A", V3A)
 # Associate utility functions with the numbering of alternatives
 VA = {
     1: V1A,
