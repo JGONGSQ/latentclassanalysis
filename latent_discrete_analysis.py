@@ -13,7 +13,7 @@ ASC_OPTION3 = Beta('ASC_OPTION3', 0.5, -10, 10, 1, 'OPTION3 constant;')
 number_of_alternatives = 3
 
 # list_of_classes = ['A']
-list_of_classes = ['A', 'B', 'C']
+list_of_classes = ['A', 'B']
 
 # alternative specific constant in each class
 asc_variables = ['ASC_OPTION']
@@ -49,18 +49,18 @@ probs = problogit_gen(
 
 print("This is the probs #############", probs)
 
-
+# Define the panel ObsIter String
 panelObsIter = 'panelObsIter'
 
 class_membership = class_membership_gen(list_of_classes, sociademographic_variables, panelObsIter)
 
-
+# Define the metaIterator
 metaIterator('personIter', '__dataFile__', 'panelObsIter', 'id')
 
 # Defines an itertor on the data
 rowIterator('panelObsIter', 'personIter')
 
-
+#TODO corss product between to lists might have a better way to do it
 for i, prob in enumerate(probs):
     if i == 0:
         probIndiv = Prod(prob, panelObsIter) * class_membership[i]
