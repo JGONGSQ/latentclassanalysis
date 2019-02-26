@@ -101,3 +101,5 @@ loglikelihood = Sum(log(probIndiv),'personIter')
 BIOGEME_OBJECT.ESTIMATE = loglikelihood
 
 BIOGEME_OBJECT.PARAMETERS['optimizationAlgorithm'] = "CFSQP"
+BIOGEME_OBJECT.PARAMETERS['checkDerivatives'] = "0" #0 is faster
+BIOGEME_OBJECT.PARAMETERS['numberOfThreads'] = "30"

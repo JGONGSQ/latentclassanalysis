@@ -1,8 +1,8 @@
 from biogeme import *
 from headers import *
 
-LOWER_LIMIT = -10.0
-UPPER_LIMIT = 10.0
+LOWER_LIMIT = -100.0
+UPPER_LIMIT = 100.0
 
 
 def adding_variables_to_utility_equation(
