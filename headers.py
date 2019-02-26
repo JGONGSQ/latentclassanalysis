@@ -1,7 +1,6 @@
 from biogeme import *
 __rowId__=Variable('__rowId__')
 id=Variable('id')
-caseid=Variable('caseid')
 responseid=Variable('responseid')
 evblock=Variable('evblock')
 set=Variable('set')

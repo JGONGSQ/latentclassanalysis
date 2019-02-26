@@ -6,7 +6,7 @@ UPPER_LIMIT = 10.0
 
 
 def adding_variables_to_utility_equation(
-    base_variable, variable_dict, 
+    base_variable, variable_dict, category_variable,
     scale_coefficient, class_item, index, number_of_alternatives, 
     initial_value, is_fixed, is_indexed):
 
@@ -48,7 +48,10 @@ def adding_variables_to_utility_equation(
             )
 
         if index != number_of_alternatives:
-            utility_equation += beta * variable
+            if k in category_variable:
+                utility_equation += beta * (variable == category_variable[k])
+            else:
+                utility_equation += beta * variable
 
     return utility_equation
 
@@ -58,6 +61,7 @@ def problogit_gen(
     asc_variables, 
     class_variables, 
     class_alternative_variables, 
+    category_variable,
     scale_coefficient, 
     number_of_alternatives, 
     list_of_classes):
@@ -95,6 +99,7 @@ def problogit_gen(
             alt_V = adding_variables_to_utility_equation(
                 base_variable=alt_V,
                 variable_dict=class_variables,
+                category_variable=category_variable,
                 scale_coefficient=scale_coefficient,
                 class_item=class_item,
                 index=local_index,
@@ -108,6 +113,7 @@ def problogit_gen(
             alt_V = adding_variables_to_utility_equation(
                 base_variable=alt_V,
                 variable_dict=class_alternative_variables,
+                category_variable=category_variable,
                 scale_coefficient=scale_coefficient,
                 class_item=class_item,
                 index=local_index,
@@ -128,7 +134,13 @@ def problogit_gen(
 
 
 
-def class_membership_gen(list_of_classes, sociademographic_variables, panelObsIter, scale_coefficient):
+def class_membership_gen(
+    list_of_classes, 
+    sociademographic_variables, 
+    category_variable,
+    panelObsIter, 
+    scale_coefficient):
+
     class_variables = list()
     probsClass = list()
     
@@ -152,6 +164,7 @@ def class_membership_gen(list_of_classes, sociademographic_variables, panelObsIt
         class_beta = adding_variables_to_utility_equation(
                 base_variable=class_beta,
                 variable_dict=sociademographic_variables,
+                category_variable=category_variable,
                 scale_coefficient=scale_coefficient,
                 class_item=class_item,
                 index=local_index,
