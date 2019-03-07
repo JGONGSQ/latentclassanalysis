@@ -7,8 +7,8 @@ from lib.biologit_gen import problogit_gen, class_membership_gen
 # Assuming the last option is fixed as the base alternative
 number_of_alternatives = 3
 
-# list_of_classes = ['A', 'B', 'C']
-list_of_classes = ['A', 'B']
+# list_of_classes = ['A', 'B']
+list_of_classes = ['A', 'B', 'C']
 
 # alternative specific constant in each class
 asc_variables = ['ASC_OPTION']
@@ -34,10 +34,22 @@ class_variables = {
     "Small_hatch": "alt#num#vhtype",
 }
 
+list_of_class_variables = [
+    class_variables, 
+    class_variables, 
+    class_variables
+    ]
+
 # class with alternative specific variables
 class_alternative_variables = {
     # "B_VEHICLE_PRICE": "alt#num#pr"
 }
+
+list_of_class_alternative_variables = [
+    class_alternative_variables, 
+    class_alternative_variables, 
+    class_alternative_variables
+    ]
 
 category_variable = {
     "Small_Sedan": 1,
@@ -51,6 +63,12 @@ category_variable = {
 sociademographic_variables = {
     # "TEST_VARIABLE": "alt2co"
 }
+
+list_of_sociademographic_variables = [
+    sociademographic_variables,
+    sociademographic_variables,
+    sociademographic_variables
+]
 
 scale_coefficient = {
     "alt#num#pr": 100000.0,
@@ -69,8 +87,8 @@ scale_coefficient = {
 
 probs = problogit_gen(
     asc_variables, 
-    class_variables, 
-    class_alternative_variables,
+    list_of_class_variables, 
+    list_of_class_alternative_variables,
     category_variable,
     scale_coefficient,
     number_of_alternatives,
@@ -82,7 +100,7 @@ print("This is the probs #############", probs)
 # Define the panel ObsIter String
 panelObsIter = 'panelObsIter'
 
-class_membership = class_membership_gen(list_of_classes, sociademographic_variables, category_variable, panelObsIter, scale_coefficient)
+class_membership = class_membership_gen(list_of_classes, list_of_sociademographic_variables, category_variable, panelObsIter, scale_coefficient)
 
 # Define the metaIterator
 metaIterator('personIter', '__dataFile__', 'panelObsIter', 'id')

@@ -59,8 +59,8 @@ def adding_variables_to_utility_equation(
 
 def problogit_gen(
     asc_variables, 
-    class_variables, 
-    class_alternative_variables, 
+    list_of_class_variables, 
+    list_of_class_alternative_variables, 
     category_variable,
     scale_coefficient, 
     number_of_alternatives, 
@@ -68,7 +68,7 @@ def problogit_gen(
 
     probs = list()
     
-    for class_item in list_of_classes:
+    for class_index, class_item in enumerate(list_of_classes):
         V = {}
         av = {}
         print(class_item)
@@ -98,7 +98,7 @@ def problogit_gen(
 
             alt_V = adding_variables_to_utility_equation(
                 base_variable=alt_V,
-                variable_dict=class_variables,
+                variable_dict=list_of_class_variables[class_index],
                 category_variable=category_variable,
                 scale_coefficient=scale_coefficient,
                 class_item=class_item,
@@ -112,7 +112,7 @@ def problogit_gen(
             # class alternative specific variables
             alt_V = adding_variables_to_utility_equation(
                 base_variable=alt_V,
-                variable_dict=class_alternative_variables,
+                variable_dict=list_of_class_alternative_variables[class_index],
                 category_variable=category_variable,
                 scale_coefficient=scale_coefficient,
                 class_item=class_item,
@@ -136,7 +136,7 @@ def problogit_gen(
 
 def class_membership_gen(
     list_of_classes, 
-    sociademographic_variables, 
+    list_of_sociademographic_variables, 
     category_variable,
     panelObsIter, 
     scale_coefficient):
@@ -163,7 +163,7 @@ def class_membership_gen(
         # adding sociademograohic variables to the class membership utility function
         class_beta = adding_variables_to_utility_equation(
                 base_variable=class_beta,
-                variable_dict=sociademographic_variables,
+                variable_dict=list_of_sociademographic_variables[i],
                 category_variable=category_variable,
                 scale_coefficient=scale_coefficient,
                 class_item=class_item,
