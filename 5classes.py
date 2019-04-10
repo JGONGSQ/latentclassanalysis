@@ -78,7 +78,7 @@ Cost_km_A = Beta('Cost_km_A',-0.243622,-100,100,0,'Cost_km_A' )
 # Rebate_upfront_cost_A = Beta('Rebate_upfront_cost_A',0.352822,-100,100,0,'Rebate_upfront_cost_A' )
 Rebate_parking_A = Beta('Rebate_parking_A',0,-100,100,0,'Rebate_parking_A' )
 # Energy_bill_A = Beta('Energy_bill_A',0.560112,-100,100,0,'Energy_bill_A' )
-# Stamp_duty_A = Beta('Stamp_duty_A',-0.155771,-100,100,0,'Stamp_duty_A' )
+# Stamp_duty_A = Beta('Stamp_duty_A', -0.155771,-100,100,0,'Stamp_duty_A' )
 # Penetration_A = Beta('Penetration_A',0,-100,100,0,'Penetration_A' )
 Small_Sedan_A = Beta('Small_Sedan_A',1.69762,-100,100,0,'Small_Sedan_A' )
 # Large_sedan_A = Beta('Large_sedan_A',0.334826,-100,100,0,'Large_sedan_A' )
@@ -89,7 +89,7 @@ Small_hatch_A = Beta('Small_hatch_A',1.7199,-100,100,0,'Small_hatch_A' )
 
 # Utility functions
 V1A = ASC_OPTION1_A + VEHICLE_PRICE_A * VEHICLE_OPTION1_PRICE_SCALED + Range_A*Range_Scale_1 + Cost_km_A*Cost_km_Scale_1 + Rebate_parking_A*Rebate_parking_Scale_1 + Small_Sedan_A*(alt1vhtype==1) + Small_SUV_A*(alt1vhtype==3) + Small_hatch_A*(alt1vhtype==5) 
-V2A = ASC_OPTION2_A + VEHICLE_PRICE_A * VEHICLE_OPTION2_PRICE_SCALED+ Range_A*Range_Scale_2 + Cost_km_A*Cost_km_Scale_2 + Rebate_parking_A*Rebate_parking_Scale_2  + Small_Sedan_A*(alt2vhtype==1) + Small_SUV_A*(alt2vhtype==3) + Small_hatch_A*(alt2vhtype==5) 
+V2A = ASC_OPTION2_A + VEHICLE_PRICE_A * VEHICLE_OPTION2_PRICE_SCALED + Range_A*Range_Scale_2 + Cost_km_A*Cost_km_Scale_2 + Rebate_parking_A*Rebate_parking_Scale_2 + Small_Sedan_A*(alt2vhtype==1) + Small_SUV_A*(alt2vhtype==3) + Small_hatch_A*(alt2vhtype==5) 
 V3A = ASC_OPTION3_A
 
 # Associate utility functions with the numbering of alternatives
@@ -135,7 +135,7 @@ Large_sedan_B = Beta('Large_sedan_B',1.54696,-100,100,0,'Large_sedan_B' )
 
 # Utility functions
 V1B = ASC_OPTION1_B + VEHICLE_PRICE_B * VEHICLE_OPTION1_PRICE_SCALED + Range_B*Range_Scale_1 + R_time_B*R_time_Scale_1 + Large_sedan_B*(alt1vhtype==2)
-V2B = ASC_OPTION2_B + VEHICLE_PRICE_B * VEHICLE_OPTION2_PRICE_SCALED + Range_B*Range_Scale_2 + R_time_B*R_time_Scale_2 + Large_sedan_B*(alt2vhtype==2) 
+V2B = ASC_OPTION2_B + VEHICLE_PRICE_B * VEHICLE_OPTION2_PRICE_SCALED + Range_B*Range_Scale_2 + R_time_B*R_time_Scale_2 + Large_sedan_B*(alt2vhtype==2)
 V3B = ASC_OPTION3_B
 
 # Associate utility functions with the numbering of alternatives
@@ -178,8 +178,8 @@ Large_SUV_C = Beta('Large_SUV_C',3.01394,-100,100,0,'Large_SUV_C' )
 # Small_hatch_C = Beta('Small_hatch_C',0.842589,-100,100,0,'Small_hatch_C' )
 
 # Utility functions
-V1C = ASC_OPTION1_C + VEHICLE_PRICE_C * VEHICLE_OPTION1_PRICE_SCALED + Range_C*Range_Scale_1 + R_time_C*R_time_Scale_1 + Cost_km_C*Cost_km_Scale_1 + Rebate_upfront_cost_C*Rebate_upfront_cost_Scale_1 + Rebate_parking_C*Rebate_parking_Scale_1 + Energy_bill_C*Energy_bill_Scale_1 + Penetration_C*Penetration_Scale_1 + Large_sedan_C*(alt1vhtype==2) + Small_SUV_C*(alt1vhtype==3) + Large_SUV_C*(alt1vhtype==4)  
-V2C = ASC_OPTION2_C + VEHICLE_PRICE_C * VEHICLE_OPTION2_PRICE_SCALED + Range_C*Range_Scale_2 + R_time_C*R_time_Scale_2 + Cost_km_C*Cost_km_Scale_2 + Rebate_upfront_cost_C*Rebate_upfront_cost_Scale_2 + Rebate_parking_C*Rebate_parking_Scale_2 + Energy_bill_C*Energy_bill_Scale_2 + Penetration_C*Penetration_Scale_2 + Large_sedan_C*(alt2vhtype==2) + Small_SUV_C*(alt2vhtype==3) + Large_SUV_C*(alt2vhtype==4)  
+V1C = ASC_OPTION1_C + VEHICLE_PRICE_C * VEHICLE_OPTION1_PRICE_SCALED + Range_C*Range_Scale_1 + R_time_C*R_time_Scale_1 + Cost_km_C*Cost_km_Scale_1 + Rebate_upfront_cost_C*Rebate_upfront_cost_Scale_1 + Rebate_parking_C*Rebate_parking_Scale_1 + Energy_bill_C*Energy_bill_Scale_1 + Penetration_C*Penetration_Scale_1 + Large_sedan_C*(alt1vhtype==2) + Small_SUV_C*(alt1vhtype==3) + Large_SUV_C*(alt1vhtype==4) 
+V2C = ASC_OPTION2_C + VEHICLE_PRICE_C * VEHICLE_OPTION2_PRICE_SCALED + Range_C*Range_Scale_2 + R_time_C*R_time_Scale_2 + Cost_km_C*Cost_km_Scale_2 + Rebate_upfront_cost_C*Rebate_upfront_cost_Scale_2 + Rebate_parking_C*Rebate_parking_Scale_2 + Energy_bill_C*Energy_bill_Scale_2 + Penetration_C*Penetration_Scale_2 + Large_sedan_C*(alt2vhtype==2) + Small_SUV_C*(alt2vhtype==3) + Large_SUV_C*(alt2vhtype==4)
 V3C = ASC_OPTION3_C
 
 # Associate utility functions with the numbering of alternatives
