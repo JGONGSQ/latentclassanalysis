@@ -9,70 +9,90 @@ number_of_alternatives = 3
 
 # list_of_classes = ['A', 'B']
 # list_of_classes = ['A', 'B', 'C', 'D', 'E', 'F']
-list_of_classes = ['A', 'B', 'C']
+list_of_classes = ['A', 'B', 'C', 'D']
 
 # alternative specific constant in each class
 asc_variables = ['ASC_OPTION']
 
 # class specific variables
-class_variables = {
+class_variables_A = {
     "B_VEHICLE_PRICE": "alt#num#pr",
     "Range": "alt#num#rg",
     "R_time": "alt#num#ti",
-    "Set_cost": "alt#num#se",
-    "Cost_km": "alt#num#co",
-    "Ava_fast": "alt#num#avl",
+    # "Set_cost": "alt#num#se",
+    # "Cost_km": "alt#num#co",
+    # "Ava_fast": "alt#num#avl",
     "Acc_bus": "alt#num#acc",
-    "Rebate_upfront_cost": "alt#num#incup",
-    "Rebate_parking": "alt#num#incprk",
-    "Energy_bill": "alt#num#incbll",
+    # "Rebate_upfront_cost": "alt#num#incup",
+    # "Rebate_parking": "alt#num#incprk",
+    # "Energy_bill": "alt#num#incbll",
     "Stamp_duty": "alt#num#incst",
-    "Penetration": "alt#num#sld",
+    # "Penetration": "alt#num#sld",
+    # "Small_Sedan": "alt#num#vhtype",
+    # "Large_Sedan": "alt#num#vhtype",
+    # "Small_SUV": "alt#num#vhtype",
+    # "Large_SUV": "alt#num#vhtype",
+    # "Small_hatch": "alt#num#vhtype",
+}
+
+class_variables_B = {
+    "B_VEHICLE_PRICE": "alt#num#pr",
+    "Range": "alt#num#rg",
+    # "R_time": "alt#num#ti",
+    # "Set_cost": "alt#num#se",
+    "Cost_km": "alt#num#co",
+    # "Ava_fast": "alt#num#avl",
+    "Acc_bus": "alt#num#acc",
+    # "Rebate_upfront_cost": "alt#num#incup",
+    "Rebate_parking": "alt#num#incprk",
+    # "Energy_bill": "alt#num#incbll",
+    # "Stamp_duty": "alt#num#incst",
+    # "Penetration": "alt#num#sld",
+    # "Small_Sedan": "alt#num#vhtype",
+    # "Large_Sedan": "alt#num#vhtype",
+    "Small_SUV": "alt#num#vhtype",
+    # "Large_SUV": "alt#num#vhtype",
+    # "Small_hatch": "alt#num#vhtype",
+}
+
+class_variables_C = {
+    "B_VEHICLE_PRICE": "alt#num#pr",
+    "Range": "alt#num#rg",
+    "R_time": "alt#num#ti",
+    # "Set_cost": "alt#num#se",
+    "Cost_km": "alt#num#co",
+    # "Ava_fast": "alt#num#avl",
+    # "Acc_bus": "alt#num#acc",
+    # "Rebate_upfront_cost": "alt#num#incup",
+    # "Rebate_parking": "alt#num#incprk",
+    # "Energy_bill": "alt#num#incbll",
+    "Stamp_duty": "alt#num#incst",
+    # "Penetration": "alt#num#sld",
     "Small_Sedan": "alt#num#vhtype",
     "Large_Sedan": "alt#num#vhtype",
     "Small_SUV": "alt#num#vhtype",
     "Large_SUV": "alt#num#vhtype",
-    "Small_hatch": "alt#num#vhtype",
-}
-
-class_variables_B = {
-    # "B_VEHICLE_PRICE": "alt#num#pr",
-    "Range": "alt#num#rg",
-    "R_time": "alt#num#ti",
-    "Set_cost": "alt#num#se",
-    "Cost_km": "alt#num#co",
-    "Ava_fast": "alt#num#avl",
-    "Acc_bus": "alt#num#acc",
-    "Rebate_upfront_cost": "alt#num#incup",
-    "Rebate_parking": "alt#num#incprk",
-    "Energy_bill": "alt#num#incbll",
-    "Stamp_duty": "alt#num#incst",
-    "Penetration": "alt#num#sld",
-    "Small_Sedan": "alt#num#vhtype",
-    "Large_Sedan": "alt#num#vhtype",
-    "Small_SUV": "alt#num#vhtype",
-    # "Large_SUV": "alt#num#vhtype",
-    "Small_hatch": "alt#num#vhtype",
+    # "Small_hatch": "alt#num#vhtype",
 }
 
 class_variables_D = {
     # "B_VEHICLE_PRICE": "alt#num#pr",
     "Range": "alt#num#rg",
-    "R_time": "alt#num#ti",
+    # "R_time": "alt#num#ti",
     "Set_cost": "alt#num#se",
     "Cost_km": "alt#num#co",
-    "Ava_fast": "alt#num#avl",
-    "Acc_bus": "alt#num#acc",
-    "Rebate_upfront_cost": "alt#num#incup",
-    "Rebate_parking": "alt#num#incprk",
-    "Energy_bill": "alt#num#incbll",
+    # "Ava_fast": "alt#num#avl",
+    # "Acc_bus": "alt#num#acc",
+    # "Rebate_upfront_cost": "alt#num#incup",
+    # "Rebate_parking": "alt#num#incprk",
+    # "Energy_bill": "alt#num#incbll",
     "Stamp_duty": "alt#num#incst",
-    "Penetration": "alt#num#sld",
-    "Small_Sedan": "alt#num#vhtype",
-    "Large_Sedan": "alt#num#vhtype",
-    "Small_SUV": "alt#num#vhtype",
-    "Large_SUV": "alt#num#vhtype",
-    "Small_hatch": "alt#num#vhtype",
+    # "Penetration": "alt#num#sld",
+    # "Small_Sedan": "alt#num#vhtype",
+    # "Large_Sedan": "alt#num#vhtype",
+    # "Small_SUV": "alt#num#vhtype",
+    # "Large_SUV": "alt#num#vhtype",
+    # "Small_hatch": "alt#num#vhtype",
 }
 
 class_variables_E = {
@@ -137,10 +157,10 @@ class_variables_G = {
 
 
 list_of_class_variables = [
-    class_variables, 
+    class_variables_A, 
     class_variables_B, 
-    class_variables,
-    # class_variables_D,
+    class_variables_C,
+    class_variables_D,
     # class_variables_E,
     # class_variables_F
     # class_variables_G
@@ -154,7 +174,7 @@ class_alternative_variables = {
 list_of_class_alternative_variables = [
     class_alternative_variables, 
     class_alternative_variables, 
-    # class_alternative_variables,
+    class_alternative_variables,
     # class_alternative_variables,
     # class_alternative_variables,
     class_alternative_variables
@@ -205,23 +225,23 @@ category_variable = {
 }
 
 # the variables relates to the class membership
-sociademographic_variables = {
+sociademographic_variables_A = {
     # "Gender_male": "gender",
-    # "Gender_female": "gender",
-    # "Gender_other": "gender"
+    # "Gender_female": "gender", 
+    # "Gender_other": "gender" # Base category
     # "Lifestyle_Couple": "lifestyle",
     # "Lifestyle_Couple_with_kid": "lifestyle",
     # "Lifestyle_OneParent_with_kid": "lifestyle",
-    # "Lifestyle_Other": "lifestyle",
+    # "Lifestyle_Other": "lifestyle", # Base category
     # "Lifestyle_Single": "lifestyle",
     # "Lifestyle_Group": "lifestyle",
-    # "Employment_fulltime": "employment", # may woprks
+    # "Employment_fulltime": "employment",
     # "Employment_parttime": "employment",
     # "Employment_unemployed_looking": "employment",
     # "Employment_unemployed": "employment",
-    # "Employment_retired": "employment",
+    "Employment_retired": "employment",
     # "Employment_student": "employment",
-    # "Employment_household": "employment",
+    # "Employment_household": "employment", # Base category
     # "Education_PhD": "education",
     # "Education_Master": "education",
     # "Education_GraduateDiploma": "education",
@@ -229,30 +249,146 @@ sociademographic_variables = {
     # "Education_Diploma": "education",
     # "Education_TAFE": "education",
     # "Education_Year12": "education",
-    # "Education_UnderYear12": "education",
-    # "NumCars_1": "numCars", # may works
+    # "Education_UnderYear12": "education", # Base category
+    "NumCars_1": "numCars",
     # "NumCars_2": "numCars",
-    # "NumCars_2+": "numCars",
+    # "NumCars_2+": "numCars", # base category
     # "isLicenced_Yes": "isLicenced",
-    # "isLicenced_No": "isLicenced",
+    # "isLicenced_No": "isLicenced", # base category
+    "numberHousehold": "numHousehold", # mayworks
+    # "householdtype_freestanding": "householdtype",
+    # "householdtype_townhouse": "householdtype",
+    # "householdtype_apartment": "householdtype",
+    # "householdtype_other": "householdtype", # base category
+    # "dwelling_own_outright": "dwelling",
+    # "dwelling_own_mortgage": "dwelling", # base category   
+}
+
+sociademographic_variables_B = {
+    # "Gender_male": "gender",
+    # "Gender_female": "gender", 
+    # "Gender_other": "gender" # Base category
+    # "Lifestyle_Couple": "lifestyle",
+    "Lifestyle_Couple_with_kid": "lifestyle",
+    # "Lifestyle_OneParent_with_kid": "lifestyle",
+    # "Lifestyle_Other": "lifestyle", # Base category
+    # "Lifestyle_Single": "lifestyle",
+    "Lifestyle_Group": "lifestyle",
+    # "Employment_fulltime": "employment",
+    # "Employment_parttime": "employment",
+    # "Employment_unemployed_looking": "employment",
+    # "Employment_unemployed": "employment",
+    # "Employment_retired": "employment",
+    # "Employment_student": "employment",
+    # "Employment_household": "employment", # Base category
+    # "Education_PhD": "education",
+    "Education_Master": "education",
+    # "Education_GraduateDiploma": "education",
+    # "Education_Bachelor": "education",
+    # "Education_Diploma": "education",
+    # "Education_TAFE": "education",
+    # "Education_Year12": "education",
+    # "Education_UnderYear12": "education", # Base category
+    # "NumCars_1": "numCars",
+    # "NumCars_2": "numCars",
+    # "NumCars_2+": "numCars", # base category
+    # "isLicenced_Yes": "isLicenced",
+    # "isLicenced_No": "isLicenced", # base category
     # "numberHousehold": "numHousehold", # mayworks
     # "householdtype_freestanding": "householdtype",
     # "householdtype_townhouse": "householdtype",
     # "householdtype_apartment": "householdtype",
-    # "householdtype_other": "householdtype",
+    # "householdtype_other": "householdtype", # base category
+    # "dwelling_own_outright": "dwelling",
+    # "dwelling_own_mortgage": "dwelling", # base category   
+}
+
+sociademographic_variables_C = {
+    # "Gender_male": "gender",
+    # "Gender_female": "gender", 
+    # "Gender_other": "gender" # Base category
+    # "Lifestyle_Couple": "lifestyle",
+    # "Lifestyle_Couple_with_kid": "lifestyle",
+    # "Lifestyle_OneParent_with_kid": "lifestyle",
+    # "Lifestyle_Other": "lifestyle", # Base category
+    # "Lifestyle_Single": "lifestyle",
+    # "Lifestyle_Group": "lifestyle",
+    "Employment_fulltime": "employment",
+    # "Employment_parttime": "employment",
+    # "Employment_unemployed_looking": "employment",
+    # "Employment_unemployed": "employment",
+    "Employment_retired": "employment",
+    # "Employment_student": "employment",
+    # "Employment_household": "employment", # Base category
+    # "Education_PhD": "education",
+    "Education_Master": "education",
+    # "Education_GraduateDiploma": "education",
+    # "Education_Bachelor": "education",
+    # "Education_Diploma": "education",
+    # "Education_TAFE": "education",
+    # "Education_Year12": "education",
+    # "Education_UnderYear12": "education", # Base category
+    # "NumCars_1": "numCars",
+    # "NumCars_2": "numCars",
+    # "NumCars_2+": "numCars", # base category
+    # "isLicenced_Yes": "isLicenced",
+    # "isLicenced_No": "isLicenced", # base category
+    "numberHousehold": "numHousehold", # mayworks
+    # "householdtype_freestanding": "householdtype",
+    # "householdtype_townhouse": "householdtype",
+    # "householdtype_apartment": "householdtype",
+    # "householdtype_other": "householdtype", # base category
+    # "dwelling_own_outright": "dwelling",
+    # "dwelling_own_mortgage": "dwelling", # base category   
+}
+
+sociademographic_variables_D = {
+    "Gender_male": "gender",
+    "Gender_female": "gender", 
+    # "Gender_other": "gender" # Base category
+    "Lifestyle_Couple": "lifestyle",
+    "Lifestyle_Couple_with_kid": "lifestyle",
+    "Lifestyle_OneParent_with_kid": "lifestyle",
+    # "Lifestyle_Other": "lifestyle", # Base category
+    "Lifestyle_Single": "lifestyle",
+    "Lifestyle_Group": "lifestyle",
+    "Employment_fulltime": "employment",
+    "Employment_parttime": "employment",
+    "Employment_unemployed_looking": "employment",
+    "Employment_unemployed": "employment",
+    "Employment_retired": "employment",
+    "Employment_student": "employment",
+    # "Employment_household": "employment", # Base category
+    "Education_PhD": "education",
+    "Education_Master": "education",
+    "Education_GraduateDiploma": "education",
+    "Education_Bachelor": "education",
+    "Education_Diploma": "education",
+    "Education_TAFE": "education",
+    "Education_Year12": "education",
+    # "Education_UnderYear12": "education", # Base category
+    "NumCars_1": "numCars",
+    "NumCars_2": "numCars",
+    # "NumCars_2+": "numCars", # base category
+    "isLicenced_Yes": "isLicenced",
+    # "isLicenced_No": "isLicenced", # base category
+    "numberHousehold": "numHousehold", # mayworks
+    "householdtype_freestanding": "householdtype",
+    "householdtype_townhouse": "householdtype",
+    "householdtype_apartment": "householdtype",
+    # "householdtype_other": "householdtype", # base category
     "dwelling_own_outright": "dwelling",
-    "dwelling_own_mortgage": "dwelling",
-    
+    # "dwelling_own_mortgage": "dwelling", # base category   
 }
 
 list_of_sociademographic_variables = [
-    sociademographic_variables,
-    sociademographic_variables,
+    sociademographic_variables_A,
+    sociademographic_variables_B,
+    sociademographic_variables_C,
+    sociademographic_variables_D,
     # sociademographic_variables,
     # sociademographic_variables,
-    # sociademographic_variables,
-    # sociademographic_variables,
-    sociademographic_variables
+    # sociademographic_variables
 ]
 
 scale_coefficient = {

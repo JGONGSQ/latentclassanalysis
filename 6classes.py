@@ -240,6 +240,94 @@ avD = {
 # The choice model is a logit, with availability conditions
 prob_D = bioLogit(VD, avD, choice)
 
+########################### Class E ###################################################
+ASC_OPTION1_E = Beta('ASC_OPTION1_E',-2.13972,-100,100,1,'ASC_OPTION1_E' )
+ASC_OPTION2_E = Beta('ASC_OPTION2_E',-2.02796,-100,100,1,'ASC_OPTION2_E' )
+ASC_OPTION3_E = Beta('ASC_OPTION3_E',0,-100,100,1,'ASC_OPTION3_E' )
+
+VEHICLE_PRICE_E = Beta('VEHICLE_PRICE_E',-1.13514,-100,100,1,'VEHICLE_PRICE_E' )
+Range_E = Beta('Range_E',0.175848,-100,100,1,'Range_E' )
+R_time_E = Beta('R_time_E',-0.811998,-100,100,1,'R_time_E')
+Set_cost_E = Beta('Set_cost_E',0,-100,100,1,'Set_cost_E' )
+Cost_km_E = Beta('Cost_km_E',0,-100,100,1,'Cost_km_E' )
+Ava_fast_E = Beta('Ava_fast_E',0,-100,100,1,'Ava_fast_E' )
+Acc_bus_E = Beta('Acc_bus_E',0.284542,-100,100,1,'Acc_bus_E' )
+Rebate_upfront_cost_E = Beta('Rebate_upfront_cost_E',0.433731,-100,100,1,'Rebate_upfront_cost_E' )
+Rebate_parking_E = Beta('Rebate_parking_E',-0.0724095,-100,100,1,'Rebate_parking_E' )
+Energy_bill_E = Beta('Energy_bill_E',0.717412,-100,100,1,'Energy_bill_E' )
+Stamp_duty_E = Beta('Stamp_duty_E',-0.185772,-100,100,1,'Stamp_duty_E' )
+Penetration_E = Beta('Penetration_E',0.374023,-100,100,1,'Penetration_E' )
+Small_Sedan_E = Beta('Small_Sedan_E',1.74487,-100,100,1,'Small_Sedan_E' )
+Large_sedan_E = Beta('Large_sedan_E',0.487068,-100,100,1,'Large_sedan_E' )
+Small_SUV_E = Beta('Small_SUV_E',0.974841,-100,100,1,'Small_SUV_E' )
+Large_SUV_E = Beta('Large_SUV_E',0,-100,100,1,'Large_SUV_E' )
+Small_hatch_E = Beta('Small_hatch_E',1.92869,-100,100,1,'Small_hatch_E' )
+
+# Utility functions
+V1E = ASC_OPTION1_E + VEHICLE_PRICE_E * VEHICLE_OPTION1_PRICE_SCALED + Range_E*Range_Scale_1 + R_time_E*R_time_Scale_1 + Set_cost_E*Set_cost_Scale_1 + Cost_km_E*Cost_km_Scale_1 + Ava_fast_E*Ava_fast_charge_Scale_1 + Acc_bus_E*alt1acc + Rebate_upfront_cost_E*Rebate_upfront_cost_Scale_1 + Rebate_parking_E*Rebate_parking_Scale_1 + Energy_bill_E*Energy_bill_Scale_1 + Stamp_duty_E*Stamp_duty_Scale_1 + Penetration_E*Penetration_Scale_1+ Small_Sedan_E*(alt1vhtype==1) + Large_sedan_E*(alt1vhtype==2) + Small_SUV_E*(alt1vhtype==3) + Large_SUV_E*(alt1vhtype==4) + Small_hatch_E*(alt1vhtype==5) 
+V2E = ASC_OPTION2_E + VEHICLE_PRICE_E * VEHICLE_OPTION2_PRICE_SCALED + Range_E*Range_Scale_2 + R_time_E*R_time_Scale_2 + Set_cost_E*Set_cost_Scale_2 + Cost_km_E*Cost_km_Scale_2 + Ava_fast_E*Ava_fast_charge_Scale_2 + Acc_bus_E*alt2acc + Rebate_upfront_cost_E*Rebate_upfront_cost_Scale_2 + Rebate_parking_E*Rebate_parking_Scale_2 + Energy_bill_E*Energy_bill_Scale_2 + Stamp_duty_E*Stamp_duty_Scale_2 + Penetration_E*Penetration_Scale_2+ Small_Sedan_E*(alt2vhtype==1) + Large_sedan_E*(alt2vhtype==2) + Small_SUV_E*(alt2vhtype==3) + Large_SUV_E*(alt2vhtype==4) + Small_hatch_E*(alt2vhtype==5) 
+V3E = ASC_OPTION3_E
+
+# Associate utility functions with the numbering of alternatives
+VE = {
+    1: V1E,
+    2: V2E,
+    3: V3E}
+
+avE = {
+    1: 1,
+    2: 1,
+    3: 1}
+
+
+# The choice model is a logit, with availability conditions
+prob_E = bioLogit(VE, avE, choice)
+
+########################### Class F ###################################################
+ASC_OPTION1_F = Beta('ASC_OPTION1_F',0,-100,100,0,'ASC_OPTION1_F' )
+ASC_OPTION2_F = Beta('ASC_OPTION2_F',0,-100,100,0,'ASC_OPTION2_F' )
+ASC_OPTION3_F = Beta('ASC_OPTION3_F',0,-100,100,1,'ASC_OPTION3_F' )
+
+# VEHICLE_PRICE_F = Beta('VEHICLE_PRICE_F',0,-100,100,0,'VEHICLE_PRICE_F' )
+# Range_F = Beta('Range_F',0,-100,100,0,'Range_F' )
+# R_time_F = Beta('R_time_F',0,-100,100,0,'R_time_F')
+# Set_cost_F = Beta('Set_cost_F',0,-100,100,0,'Set_cost_F')
+# Cost_km_F = Beta('Cost_km_F',0,-100,100,0,'Cost_km_F' )
+Ava_fast_F = Beta('Ava_fast_F',0,-100,100,0,'Ava_fast_F' )
+# Acc_bus_F = Beta('Acc_bus_F',0,-100,100,0,'Acc_bus_F' )
+# Rebate_upfront_cost_F = Beta('Rebate_upfront_cost_F',0,-100,100,0,'Rebate_upfront_cost_F' )
+# Rebate_parking_F = Beta('Rebate_parking_F',0,-100,100,0,'Rebate_parking_F' )
+# Energy_bill_F = Beta('Energy_bill_F',0,-100,100,0,'Energy_bill_F' )
+# Stamp_duty_F = Beta('Stamp_duty_F',0,-100,100,0,'Stamp_duty_F' )
+# Penetration_F = Beta('Penetration_F',0,-100,100,0,'Penetration_F' )
+# Small_Sedan_F = Beta('Small_Sedan_F',0,-100,100,0,'Small_Sedan_F')
+# Large_sedan_F = Beta('Large_sedan_F',0,-100,100,0,'Large_sedan_F')
+# Small_SUV_F = Beta('Small_SUV_F',0,-100,100,0,'Small_SUV_F')
+# Large_SUV_F = Beta('Large_SUV_F',0,-100,100,0,'Large_SUV_F')
+# Small_hatch_F = Beta('Small_hatch_F',0,-100,100,0,'Small_hatch_F')
+
+# Utility functions
+# V1F = ASC_OPTION1_F + VEHICLE_PRICE_F * VEHICLE_OPTION1_PRICE_SCALED + Range_F*Range_Scale_1 + R_time_F*R_time_Scale_1 + Set_cost_F*Set_cost_Scale_1 + Cost_km_F*Cost_km_Scale_1 + Ava_fast_F*Ava_fast_charge_Scale_1 + Acc_bus_F*alt1acc + Rebate_upfront_cost_F*Rebate_upfront_cost_Scale_1 + Rebate_parking_F*Rebate_parking_Scale_1 + Energy_bill_F*Energy_bill_Scale_1 + Stamp_duty_F*Stamp_duty_Scale_1 + Penetration_F*Penetration_Scale_1 + Small_Sedan_F*(alt1vhtype==1) + Large_sedan_F*(alt1vhtype==2) + Small_SUV_F*(alt1vhtype==3) + Large_SUV_F*(alt1vhtype==4) + Small_hatch_F*(alt1vhtype==5) 
+# V2F = ASC_OPTION2_F + VEHICLE_PRICE_F * VEHICLE_OPTION2_PRICE_SCALED + Range_F*Range_Scale_2 + R_time_F*R_time_Scale_2 + Set_cost_F*Set_cost_Scale_2 + Cost_km_F*Cost_km_Scale_2 + Ava_fast_F*Ava_fast_charge_Scale_2 + Acc_bus_F*alt2acc + Rebate_upfront_cost_F*Rebate_upfront_cost_Scale_2 + Rebate_parking_F*Rebate_parking_Scale_2 + Energy_bill_F*Energy_bill_Scale_2 + Stamp_duty_F*Stamp_duty_Scale_2 + Penetration_F*Penetration_Scale_2 + Small_Sedan_F*(alt2vhtype==1) + Large_sedan_F*(alt2vhtype==2) + Small_SUV_F*(alt2vhtype==3) + Large_SUV_F*(alt2vhtype==4) + Small_hatch_F*(alt2vhtype==5) 
+V1F = ASC_OPTION1_F + Ava_fast_F*Ava_fast_charge_Scale_1 
+V2F = ASC_OPTION2_F + Ava_fast_F*Ava_fast_charge_Scale_2
+V3F = ASC_OPTION3_F
+
+# Associate utility functions with the numbering of alternatives
+VF = {
+    1: V1F,
+    2: V2F,
+    3: V3F}
+
+avF = {
+    1: 1,
+    2: 1,
+    3: 1}
+
+
+# The choice model is a logit, with availability conditions
+prob_F = bioLogit(VF, avF, choice)
+
 ################################### CLASS MEMBERSHIP ############################################
 #age_66_85_A = Beta ('age_66_85_A',0,-100,100,1) (Base)
 #not_sure_A = Beta ('not_sure_A',0,-100,100,1) (Base)
@@ -292,6 +380,7 @@ apartment_A = Beta('apartment_A',0,-100,100,1,'apartment_A' )
 owned_out_A = Beta('owned_out_A',0,-100,100,1,'owned_out_A' )
 owend_mort_A = Beta('owend_mort_A',0,-100,100,1,'owend_mort_A' )
 rent_A = Beta('rent_A',0,-100,100,1,'rent_A' )
+
 ##########################################CLASS B
 class_B = Beta('class_B',0.121378,-100,100,0,'class_B' )
 age_B = Beta('age_B',0,-100,100,1,'age_B' )
@@ -333,6 +422,7 @@ apartment_B = Beta('apartment_B',0,-100,100,1,'apartment_B' )
 owned_out_B = Beta('owned_out_B',0,-100,100,1,'owned_out_B' )
 owend_mort_B = Beta('owend_mort_B',-0.5514,-100,100,1,'owend_mort_B' )
 rent_B = Beta('rent_B',0,-100,100,1,'rent_B' )
+
 ##########################################CLASS C
 class_C = Beta('class_C',-0.491785,-100,100,0,'class_C' )
 age_C = Beta('age_C',0,-100,100,1,'age_C' )
@@ -374,19 +464,108 @@ apartment_C = Beta('apartment_C',0,-100,100,1,'apartment_C' )
 owned_out_C = Beta('owned_out_C',0,-100,100,1,'owned_out_C' )
 owend_mort_C = Beta('owend_mort_C',0,-100,100,1,'owend_mort_C' )
 rent_C = Beta('rent_C',0,-100,100,1,'rent_C' )
+
 ##########################################CLASS D
-class_D = Beta('class_D',0,-100,100,1,'class_D' )
+class_D = Beta('class_D',5.16,-100,100,0,'class_D' )
+age_D = Beta('age_D',0,-100,100,1,'age_D' )
+age_18_30_D = Beta('age_18_30_D',-1.67,-100,100,1,'age_18_30_D' )
+age_31_45_D = Beta('age_31_45_D',-1.34,-100,100,1,'age_31_45_D' )
+age_46_65_D = Beta('age_46_65_D',-0.985,-100,100,1,'age_46_65_D' )
+brand_new_D = Beta('brand_new_D',0.51,-100,100,1,'brand_new_D' )
+second_hand_D = Beta('second_hand_D',-0.857057,-100,100,1,'second_hand_D' )
+familiar_EV_D = Beta('familiar_EV_D',0.456,-100,100,1,'familiar_EV_D' )
+EV_common_q5_9_D = Beta('EV_common_q5_9_D',0,-100,100,1,'EV_common_q5_9_D' )
+affordable_q5_10_1_D = Beta('affordable_q5_10_1_D',-1.553,-100,100,1,'affordable_q5_10_1_D' )
+longer_range_q5_10_2_D = Beta('longer_range_q5_10_2_D',0,-100,100,1,'longer_range_q5_10_2_D' )
+infrastructure_q5_10_3_D = Beta('infrastructure_q5_10_3_D',0,-100,100,1,'infrastructure_q5_10_3_D' )
+type_ev_q5_10_6_D = Beta('type_ev_q5_10_6_D',0,-100,100,1,'type_ev_q5_10_6_D' )
+incentive_q5_11_5_D = Beta('incentive_q5_11_5_D',0,-100,100,1,'incentive_q5_11_5_D' )
+human_only_D = Beta('human_only_D',-0.37,-100,100,1,'human_only_D' )
+modern_vehicle_D = Beta('modern_vehicle_D',0,-100,100,1,'modern_vehicle_D' )
+modern_plus_D = Beta('modern_plus_D',-0.438,-100,100,1,'modern_plus_D' )
+partial_autonomy_D = Beta('partial_autonomy_D',0,-100,100,1,'partial_autonomy_D' )
+full_autonomy_h_D = Beta('full_autonomy_h_D',0,-100,100,1,'full_autonomy_h_D' )
+support_ban_D = Beta('support_ban_D',0.55,-100,100,1,'support_ban_D' )
+female_D = Beta('female_D',0,-100,100,1,'female_D' )
+couple_no_kid_D = Beta('couple_no_kid_D',0,-100,100,1,'couple_no_kid_D' )
+couple_kid_D = Beta('couple_kid_D',0.559,-100,100,1,'couple_kid_D' )
+one_parent_D = Beta('one_parent_D',0,-100,100,1,'one_parent_D' )
+single_hh_D = Beta('single_hh_D',-0.662,-100,100,1,'single_hh_D' )
+income_cat_D = Beta('income_cat_D',-0.0735,-100,100,1,'income_cat_D' )
+incom_belo_52_D = Beta('incom_belo_52_D',0,-100,100,1,'incom_belo_52_D' )
+incom_belo_104_D = Beta('incom_belo_104_D',0,-100,100,1,'incom_belo_104_D' )
+incom_more_104_D = Beta('incom_more_104_D',0,-100,100,1,'incom_more_104_D' )
+fulltime_emp_D = Beta('fulltime_emp_D',0.787,-100,100,1,'fulltime_emp_D' )
+parttime_emp_D = Beta('parttime_emp_D',0,-100,100,1,'parttime_emp_D' )
+unemployed_D = Beta('unemployed_D',0,-100,100,1,'unemployed_D' )
+graduate_D = Beta('graduate_D',0,-100,100,1,'graduate_D' )
+undergrad_D = Beta('undergrad_D',0,-100,100,1,'undergrad_D' )
+certificate_D = Beta('certificate_D',0,-100,100,1,'certificate_D' )
+house_D = Beta('house_D',0,-100,100,1,'house_D' )
+apartment_D = Beta('apartment_D',0,-100,100,1,'apartment_D' )
+owned_out_D = Beta('owned_out_D',0,-100,100,1,'owned_out_D' )
+owend_mort_D = Beta('owend_mort_D',0.661,-100,100,1,'owend_mort_D' )
+rent_D = Beta('rent_D',0,-100,100,1,'rent_D' )
+
+##########################################CLASS E
+class_E = Beta('class_E',0,-100,100,0,'class_E' )
+age_E = Beta('age_E',0,-100,100,0,'age_E' )
+age_18_30_E = Beta('age_18_30_E',0,-100,100,0,'age_18_30_E' )
+age_31_45_E = Beta('age_31_45_E',0,-100,100,0,'age_31_45_E' )
+age_46_65_E = Beta('age_46_65_E',0,-100,100,0,'age_46_65_E' )
+brand_new_E = Beta('brand_new_E',0,-100,100,0,'brand_new_E' )
+# second_hand_E = Beta('second_hand_E',0,-100,100,0,'second_hand_E' )
+familiar_EV_E = Beta('familiar_EV_E',0,-100,100,0,'familiar_EV_E' )
+EV_common_q5_9_E = Beta('EV_common_q5_9_E',0,-100,100,0,'EV_common_q5_9_E' )
+affordable_q5_10_1_E = Beta('affordable_q5_10_1_E',0,-100,100,0,'affordable_q5_10_1_E' )
+longer_range_q5_10_2_E = Beta('longer_range_q5_10_2_E',0,-100,100,0,'longer_range_q5_10_2_E' )
+infrastructure_q5_10_3_E = Beta('infrastructure_q5_10_3_E',0,-100,100,0,'infrastructure_q5_10_3_E' )
+type_ev_q5_10_6_E = Beta('type_ev_q5_10_6_E',0,-100,100,0,'type_ev_q5_10_6_E' )
+incentive_q5_11_5_E = Beta('incentive_q5_11_5_E',0,-100,100,0,'incentive_q5_11_5_E' )
+human_only_E = Beta('human_only_E',0,-100,100,0,'human_only_E' )
+modern_vehicle_E = Beta('modern_vehicle_E',0,-100,100,0,'modern_vehicle_E' )
+modern_plus_E = Beta('modern_plus_E',0,-100,100,0,'modern_plus_E' )
+partial_autonomy_E = Beta('partial_autonomy_E',0,-100,100,0,'partial_autonomy_E' )
+full_autonomy_h_E = Beta('full_autonomy_h_E',0,-100,100,0,'full_autonomy_h_E' )
+support_ban_E = Beta('support_ban_E',0,-100,100,0,'support_ban_E' )
+female_E = Beta('female_E',0,-100,100,0,'female_E' )
+couple_no_kid_E = Beta('couple_no_kid_E',0,-100,100,0,'couple_no_kid_E' )
+couple_kid_E = Beta('couple_kid_E',0,-100,100,0,'couple_kid_E' )
+# one_parent_E = Beta('one_parent_E',1.07071,-100,100,0,'one_parent_E' )
+# single_hh_E = Beta('single_hh_E',0,-100,100,0,'single_hh_E' )
+income_cat_E = Beta('income_cat_E',0,-100,100,0,'income_cat_E' )
+incom_belo_52_E = Beta('incom_belo_52_E',0,-100,100,0,'incom_belo_52_E' )
+incom_belo_104_E = Beta('incom_belo_104_E',0,-100,100,0,'incom_belo_104_E' )
+incom_more_104_E = Beta('incom_more_104_E',0,-100,100,0,'incom_more_104_E' )
+fulltime_emp_E = Beta('fulltime_emp_E',0,-100,100,0,'fulltime_emp_E' )
+parttime_emp_E = Beta('parttime_emp_E',0,-100,100,0,'parttime_emp_E' )
+# unemployed_E = Beta('unemployed_E',0,-100,100,0,'unemployed_E' )
+graduate_E = Beta('graduate_E',0,-100,100,0,'graduate_E' )
+undergrad_E = Beta('undergrad_E',0,-100,100,0,'undergrad_E' )
+certificate_E = Beta('certificate_E',0,-100,100,0,'certificate_E')
+house_E = Beta('house_E',0,-100,100,0,'house_E' )
+apartment_E = Beta('apartment_E',0,-100,100,0,'apartment_E' )
+owned_out_E = Beta('owned_out_E',0,-100,100,0,'owned_out_E' )
+owend_mort_E = Beta('owend_mort_E',0,-100,100,0,'owend_mort_E' )
+# rent_E = Beta('rent_E',0,-100,100,0,'rent_E' )
+
+##########################################CLASS F
+class_F = Beta('class_F',0,-100,100,1,'class_F' )
 
 # age = beta()
 prob1 = class_A + age_A*age + age_18_30_A*age_18_30 + age_31_45_A*age_31_45 + age_46_65_A*age_46_65 + brand_new_A*brand_new + second_hand_A*second_hand + familiar_EV_A*familiar_EV + EV_common_q5_9_A*EV_common_q5_9 + affordable_q5_10_1_A*affordable_q5_10_1 + longer_range_q5_10_2_A*longer_range_q5_10_2 + infrastructure_q5_10_3_A*infrastructure_q5_10_3 + type_ev_q5_10_6_A*type_ev_q5_10_6 + incentive_q5_11_5_A*incentive_q5_11_5 + human_only_A*human_only + modern_vehicle_A*modern_vehicle + modern_plus_A*modern_plus + partial_autonomy_A*partial_autonomy + full_autonomy_h_A*full_autonomy_h + support_ban_A*support_ban + female_A*female + couple_no_kid_A*couple_no_kid + couple_kid_A*couple_kid + one_parent_A*one_parent + single_hh_A*single_hh + income_cat_A*income_cat + incom_belo_52_A*incom_belo_52 + incom_belo_104_A*incom_belo_104 + incom_more_104_A*incom_more_104 + fulltime_emp_A*fulltime_emp + parttime_emp_A*parttime_emp + unemployed_A*unemployed + graduate_A*graduate + undergrad_A*undergrad + certificate_A*certificate + house_A*house + apartment_A*apartment + owned_out_A*owned_out + owend_mort_A*owend_mort + rent_A*rent
 prob2 = class_B + age_B*age + age_18_30_B*age_18_30 + age_31_45_B*age_31_45 + age_46_65_B*age_46_65 + brand_new_B*brand_new + second_hand_B*second_hand + familiar_EV_B*familiar_EV + EV_common_q5_9_B*EV_common_q5_9 + affordable_q5_10_1_B*affordable_q5_10_1 + longer_range_q5_10_2_B*longer_range_q5_10_2 + infrastructure_q5_10_3_B*infrastructure_q5_10_3 + type_ev_q5_10_6_B*type_ev_q5_10_6 + incentive_q5_11_5_B*incentive_q5_11_5 + human_only_B*human_only + modern_vehicle_B*modern_vehicle + modern_plus_B*modern_plus + partial_autonomy_B*partial_autonomy + full_autonomy_h_B*full_autonomy_h + support_ban_B*support_ban + female_B*female + couple_no_kid_B*couple_no_kid + couple_kid_B*couple_kid + one_parent_B*one_parent + single_hh_B*single_hh + income_cat_B*income_cat + incom_belo_52_B*incom_belo_52 + incom_belo_104_B*incom_belo_104 + incom_more_104_B*incom_more_104 + fulltime_emp_B*fulltime_emp + parttime_emp_B*parttime_emp + unemployed_B*unemployed + graduate_B*graduate + undergrad_B*undergrad + certificate_B*certificate + house_B*house + apartment_B*apartment + owned_out_B*owned_out + owend_mort_B*owend_mort + rent_B*rent
 prob3 = class_C + age_C*age + age_18_30_C*age_18_30 + age_31_45_C*age_31_45 + age_46_65_C*age_46_65 + brand_new_C*brand_new + second_hand_C*second_hand + familiar_EV_C*familiar_EV + EV_common_q5_9_C*EV_common_q5_9 + affordable_q5_10_1_C*affordable_q5_10_1 + longer_range_q5_10_2_C*longer_range_q5_10_2 + infrastructure_q5_10_3_C*infrastructure_q5_10_3 + type_ev_q5_10_6_C*type_ev_q5_10_6 + incentive_q5_11_5_C*incentive_q5_11_5 + human_only_C*human_only + modern_vehicle_C*modern_vehicle + modern_plus_C*modern_plus + partial_autonomy_C*partial_autonomy + full_autonomy_h_C*full_autonomy_h + support_ban_C*support_ban + female_C*female + couple_no_kid_C*couple_no_kid + couple_kid_C*couple_kid + one_parent_C*one_parent + single_hh_C*single_hh + income_cat_C*income_cat + incom_belo_52_C*incom_belo_52 + incom_belo_104_C*incom_belo_104 + incom_more_104_C*incom_more_104 + fulltime_emp_C*fulltime_emp + parttime_emp_C*parttime_emp + unemployed_C*unemployed + graduate_C*graduate + undergrad_C*undergrad + certificate_C*certificate + house_C*house + apartment_C*apartment + owned_out_C*owned_out + owend_mort_C*owend_mort + rent_C*rent
-prob4 = class_D
+prob4 = class_D + age_D*age + age_18_30_D*age_18_30 + age_31_45_D*age_31_45 + age_46_65_D*age_46_65 + brand_new_D*brand_new + second_hand_D*second_hand + familiar_EV_D*familiar_EV + EV_common_q5_9_D*EV_common_q5_9 + affordable_q5_10_1_D*affordable_q5_10_1 + longer_range_q5_10_2_D*longer_range_q5_10_2 + infrastructure_q5_10_3_D*infrastructure_q5_10_3 + type_ev_q5_10_6_D*type_ev_q5_10_6 + incentive_q5_11_5_D*incentive_q5_11_5 + human_only_D*human_only + modern_vehicle_D*modern_vehicle + modern_plus_D*modern_plus + partial_autonomy_D*partial_autonomy + full_autonomy_h_D*full_autonomy_h + support_ban_D*support_ban + female_D*female + couple_no_kid_D*couple_no_kid + couple_kid_D*couple_kid + one_parent_D*one_parent + single_hh_D*single_hh + income_cat_D*income_cat + incom_belo_52_D*incom_belo_52 + incom_belo_104_D*incom_belo_104 + incom_more_104_D*incom_more_104 + fulltime_emp_D*fulltime_emp + parttime_emp_D*parttime_emp + unemployed_D*unemployed + graduate_D*graduate + undergrad_D*undergrad + certificate_D*certificate + house_D*house + apartment_D*apartment + owned_out_D*owned_out + owend_mort_D*owend_mort + rent_D*rent
+prob5 = class_E + age_E*age + age_18_30_E*age_18_30 + age_31_45_E*age_31_45 + age_46_65_E*age_46_65 + brand_new_E*brand_new + familiar_EV_E*familiar_EV + EV_common_q5_9_E*EV_common_q5_9 + affordable_q5_10_1_E*affordable_q5_10_1 + longer_range_q5_10_2_E*longer_range_q5_10_2 + infrastructure_q5_10_3_E*infrastructure_q5_10_3 + type_ev_q5_10_6_E*type_ev_q5_10_6 + incentive_q5_11_5_E*incentive_q5_11_5 + human_only_E*human_only + modern_vehicle_E*modern_vehicle + modern_plus_E*modern_plus + partial_autonomy_E*partial_autonomy + full_autonomy_h_E*full_autonomy_h + support_ban_E*support_ban + female_E*female + couple_no_kid_E*couple_no_kid + couple_kid_E*couple_kid + income_cat_E*income_cat + incom_belo_52_E*incom_belo_52 + incom_belo_104_E*incom_belo_104 + incom_more_104_E*incom_more_104 + fulltime_emp_E*fulltime_emp + parttime_emp_E*parttime_emp + graduate_E*graduate + undergrad_E*undergrad + certificate_E*certificate + house_E*house + apartment_E*apartment + owned_out_E*owned_out + owend_mort_E*owend_mort
+prob6 = class_F
 
-probClass1 = exp(prob1)/(exp(prob1) + exp(prob2) + exp(prob3) + exp(prob4))
-probClass2 = exp(prob2)/(exp(prob1) + exp(prob2) + exp(prob3) + exp(prob4))
-probClass3 = exp(prob3)/(exp(prob1) + exp(prob2) + exp(prob3) + exp(prob4))
-probClass4 = exp(prob4)/(exp(prob1) + exp(prob2) + exp(prob3) + exp(prob4))
+probClass1 = exp(prob1)/(exp(prob1) + exp(prob2) + exp(prob3) + exp(prob4) + exp(prob5) + exp(prob6))
+probClass2 = exp(prob2)/(exp(prob1) + exp(prob2) + exp(prob3) + exp(prob4) + exp(prob5) + exp(prob6))
+probClass3 = exp(prob3)/(exp(prob1) + exp(prob2) + exp(prob3) + exp(prob4) + exp(prob5) + exp(prob6))
+probClass4 = exp(prob4)/(exp(prob1) + exp(prob2) + exp(prob3) + exp(prob4) + exp(prob5) + exp(prob6))
+probClass5 = exp(prob5)/(exp(prob1) + exp(prob2) + exp(prob3) + exp(prob4) + exp(prob5) + exp(prob6))
+probClass6 = exp(prob6)/(exp(prob1) + exp(prob2) + exp(prob3) + exp(prob4) + exp(prob5) + exp(prob6))
 
 # probClass2 = 1 - probClass1
 
@@ -394,6 +573,8 @@ probClass11 = Sum(probClass1, 'panelObsIter')/Sum(1, 'panelObsIter')
 probClass22 = Sum(probClass2, 'panelObsIter')/Sum(1, 'panelObsIter')
 probClass33 = Sum(probClass3, 'panelObsIter')/Sum(1, 'panelObsIter')
 probClass44 = Sum(probClass4, 'panelObsIter')/Sum(1, 'panelObsIter')
+probClass55 = Sum(probClass5, 'panelObsIter')/Sum(1, 'panelObsIter')
+probClass66 = Sum(probClass6, 'panelObsIter')/Sum(1, 'panelObsIter')
 
 
 # id starts from 1 to 1076
@@ -407,10 +588,12 @@ condProbIndiv1 = Prod(prob_A,'panelObsIter')
 condProbIndiv2 = Prod(prob_B,'panelObsIter')
 condProbIndiv3 = Prod(prob_C,'panelObsIter')
 condProbIndiv4 = Prod(prob_D,'panelObsIter')
+condProbIndiv5 = Prod(prob_E,'panelObsIter')
+condProbIndiv6 = Prod(prob_F,'panelObsIter')
 
  
 # probability of individual belonging to a class
-probIndiv = (probClass11*condProbIndiv1) + (probClass22*condProbIndiv2) + (probClass33*condProbIndiv3) + (probClass44*condProbIndiv4)
+probIndiv = (probClass11*condProbIndiv1) + (probClass22*condProbIndiv2) + (probClass33*condProbIndiv3) + (probClass44*condProbIndiv4) + (probClass55*condProbIndiv5) + (probClass66*condProbIndiv6)
 
 # DEfine the likelihood function for the estimation 
 # Likelihood function
