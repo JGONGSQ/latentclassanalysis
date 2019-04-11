@@ -264,7 +264,7 @@ Small_SUV_E = Beta('Small_SUV_E',0,-100,100,0,'Small_SUV_E' )
 Small_hatch_E = Beta('Small_hatch_E',0,-100,100,0,'Small_hatch_E' )
 
 # Utility functions
-V1E = ASC_OPTION1_E + VEHICLE_PRICE_E * VEHICLE_OPTION1_PRICE_SCALED + Range_E*Range_Scale_1 + R_time_E*R_time_Scale_1 + Acc_bus_E*alt1acc + Rebate_upfront_cost_E*Rebate_upfront_cost_Scale_1 + Energy_bill_E*Energy_bill_Scale_1 + Penetration_E*Penetration_Scale_1+ Small_Sedan_E*(alt1vhtype==1) + Large_sedan_E*(alt1vhtype==2) + Small_SUV_E*(alt1vhtype==3) + Small_hatch_E*(alt1vhtype==5) 
+V1E = ASC_OPTION1_E + VEHICLE_PRICE_E * VEHICLE_OPTION1_PRICE_SCALED + Range_E*Range_Scale_1 + R_time_E*R_time_Scale_1 + Acc_bus_E*alt1acc + Rebate_upfront_cost_E*Rebate_upfront_cost_Scale_1 + Energy_bill_E*Energy_bill_Scale_1 + Penetration_E*Penetration_Scale_1+ Small_Sedan_E*(alt1vhtype==1) + Large_sedan_E*(alt1vhtype==2) + Small_SUV_E*(alt1vhtype==3) + Small_hatch_E*(alt1vhtype==5)
 V2E = ASC_OPTION2_E + VEHICLE_PRICE_E * VEHICLE_OPTION2_PRICE_SCALED + Range_E*Range_Scale_2 + R_time_E*R_time_Scale_2 + Acc_bus_E*alt2acc + Rebate_upfront_cost_E*Rebate_upfront_cost_Scale_2 + Energy_bill_E*Energy_bill_Scale_2 + Penetration_E*Penetration_Scale_2+ Small_Sedan_E*(alt2vhtype==1) + Large_sedan_E*(alt2vhtype==2) + Small_SUV_E*(alt2vhtype==3) + Small_hatch_E*(alt2vhtype==5) 
 V3E = ASC_OPTION3_E
 
