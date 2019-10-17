@@ -78,7 +78,7 @@ Cost_km_A = Beta('Cost_km_A',-0.243622,-100,100,0,'Cost_km_A' )
 # Rebate_upfront_cost_A = Beta('Rebate_upfront_cost_A',0.352822,-100,100,0,'Rebate_upfront_cost_A' )
 Rebate_parking_A = Beta('Rebate_parking_A',0,-100,100,0,'Rebate_parking_A' )
 # Energy_bill_A = Beta('Energy_bill_A',0.560112,-100,100,0,'Energy_bill_A' )
-# Stamp_duty_A = Beta('Stamp_duty_A', -0.155771,-100,100,0,'Stamp_duty_A' )
+Stamp_duty_A = Beta('Stamp_duty_A', -0.155771,-100,100,0,'Stamp_duty_A' )
 # Penetration_A = Beta('Penetration_A',0,-100,100,0,'Penetration_A' )
 Small_Sedan_A = Beta('Small_Sedan_A',1.69762,-100,100,0,'Small_Sedan_A' )
 # Large_sedan_A = Beta('Large_sedan_A',0.334826,-100,100,0,'Large_sedan_A' )
@@ -88,8 +88,8 @@ Small_hatch_A = Beta('Small_hatch_A',1.7199,-100,100,0,'Small_hatch_A' )
 
 
 # Utility functions
-V1A = ASC_OPTION1_A + VEHICLE_PRICE_A * VEHICLE_OPTION1_PRICE_SCALED + Range_A*Range_Scale_1 + Cost_km_A*Cost_km_Scale_1 + Rebate_parking_A*Rebate_parking_Scale_1 + Small_Sedan_A*(alt1vhtype==1) + Small_SUV_A*(alt1vhtype==3) + Small_hatch_A*(alt1vhtype==5) 
-V2A = ASC_OPTION2_A + VEHICLE_PRICE_A * VEHICLE_OPTION2_PRICE_SCALED + Range_A*Range_Scale_2 + Cost_km_A*Cost_km_Scale_2 + Rebate_parking_A*Rebate_parking_Scale_2 + Small_Sedan_A*(alt2vhtype==1) + Small_SUV_A*(alt2vhtype==3) + Small_hatch_A*(alt2vhtype==5) 
+V1A = ASC_OPTION1_A + VEHICLE_PRICE_A * VEHICLE_OPTION1_PRICE_SCALED + Stamp_duty_A*Stamp_duty_Scale_1 + Range_A*Range_Scale_1 + Cost_km_A*Cost_km_Scale_1 + Rebate_parking_A*Rebate_parking_Scale_1 + Small_Sedan_A*(alt1vhtype==1) + Small_SUV_A*(alt1vhtype==3) + Small_hatch_A*(alt1vhtype==5) 
+V2A = ASC_OPTION2_A + VEHICLE_PRICE_A * VEHICLE_OPTION2_PRICE_SCALED + Stamp_duty_A*Stamp_duty_Scale_2 + Range_A*Range_Scale_2 + Cost_km_A*Cost_km_Scale_2 + Rebate_parking_A*Rebate_parking_Scale_2 + Small_Sedan_A*(alt2vhtype==1) + Small_SUV_A*(alt2vhtype==3) + Small_hatch_A*(alt2vhtype==5) 
 V3A = ASC_OPTION3_A
 
 # Associate utility functions with the numbering of alternatives
@@ -121,11 +121,11 @@ R_time_B = Beta('R_time_B',-2.39115,-100,100,0,'R_time_B' )
 # Set_cost_B = Beta('Set_cost_B',0,-100,100,0,'Set_cost_B' )
 # Cost_km_B = Beta('Cost_km_B',0,-100,100,0,'Cost_km_B' )
 # Ava_fast_B = Beta('Ava_fast_B',0,-100,100,0,'Ava_fast_B' )
-# Acc_bus_B = Beta('Acc_bus_B',-0.917205,-100,100,0,'Acc_bus_B' )
+Acc_bus_B = Beta('Acc_bus_B',-0.917205,-100,100,0,'Acc_bus_B' )
 # Rebate_upfront_cost_B = Beta('Rebate_upfront_cost_B',0,-100,100,0,'Rebate_upfront_cost_B' )
 # Rebate_parking_B = Beta('Rebate_parking_B',0,-100,100,0,'Rebate_parking_B' )
-# Energy_bill_B = Beta('Energy_bill_B',1.18031,-100,100,0,'Energy_bill_B' )
-# Stamp_duty_B = Beta('Stamp_duty_B',0.391661,-100,100,0,'Stamp_duty_B' )
+Energy_bill_B = Beta('Energy_bill_B',1.18031,-100,100,0,'Energy_bill_B' )
+Stamp_duty_B = Beta('Stamp_duty_B',0.391661,-100,100,0,'Stamp_duty_B' )
 # Penetration_B = Beta('Penetration_B',0,-100,100,0,'Penetration_B' )
 # Small_Sedan_B = Beta('Small_Sedan_B',1.19202,-100,100,0,'Small_Sedan_B' )
 Large_sedan_B = Beta('Large_sedan_B',1.54696,-100,100,0,'Large_sedan_B' )
@@ -134,8 +134,8 @@ Large_sedan_B = Beta('Large_sedan_B',1.54696,-100,100,0,'Large_sedan_B' )
 # Small_hatch_B = Beta('Small_hatch_B',1.13876,-100,100,0,'Small_hatch_B' )
 
 # Utility functions
-V1B = ASC_OPTION1_B + VEHICLE_PRICE_B * VEHICLE_OPTION1_PRICE_SCALED + Range_B*Range_Scale_1 + R_time_B*R_time_Scale_1 + Large_sedan_B*(alt1vhtype==2)
-V2B = ASC_OPTION2_B + VEHICLE_PRICE_B * VEHICLE_OPTION2_PRICE_SCALED + Range_B*Range_Scale_2 + R_time_B*R_time_Scale_2 + Large_sedan_B*(alt2vhtype==2)
+V1B = ASC_OPTION1_B + VEHICLE_PRICE_B * VEHICLE_OPTION1_PRICE_SCALED + Acc_bus_B*alt1acc + Stamp_duty_B*Stamp_duty_Scale_1 + Range_B*Range_Scale_1 + Energy_bill_B*Energy_bill_Scale_1 + R_time_B*R_time_Scale_1 + Large_sedan_B*(alt1vhtype==2)
+V2B = ASC_OPTION2_B + VEHICLE_PRICE_B * VEHICLE_OPTION2_PRICE_SCALED + Acc_bus_B*alt2acc + Stamp_duty_B*Stamp_duty_Scale_2 + Range_B*Range_Scale_2 + Energy_bill_B*Energy_bill_Scale_2+ R_time_B*R_time_Scale_2 + Large_sedan_B*(alt2vhtype==2)
 V3B = ASC_OPTION3_B
 
 # Associate utility functions with the numbering of alternatives
@@ -165,7 +165,7 @@ R_time_C = Beta('R_time_C',-1.31282,-100,100,0,'R_time_C' )
 # Set_cost_C = Beta('Set_cost_C',0,-100,100,0,'Set_cost_C' )
 Cost_km_C = Beta('Cost_km_C',-0.864849,-100,100,0,'Cost_km_C' )
 # Ava_fast_C = Beta('Ava_fast_C',0,-100,100,0,'Ava_fast_C' )
-# Acc_bus_C = Beta('Acc_bus_C',0,-100,100,0,'Acc_bus_C' )
+Acc_bus_C = Beta('Acc_bus_C',0,-100,100,0,'Acc_bus_C' )
 Rebate_upfront_cost_C = Beta('Rebate_upfront_cost_C',0.742948,-100,100,0,'Rebate_upfront_cost_C' )
 Rebate_parking_C = Beta('Rebate_parking_C',0.0701713,-100,100,0,'Rebate_parking_C' )
 Energy_bill_C = Beta('Energy_bill_C',1.19448,-100,100,0,'Energy_bill_C' )
@@ -178,8 +178,8 @@ Large_SUV_C = Beta('Large_SUV_C',3.01394,-100,100,0,'Large_SUV_C' )
 # Small_hatch_C = Beta('Small_hatch_C',0.842589,-100,100,0,'Small_hatch_C' )
 
 # Utility functions
-V1C = ASC_OPTION1_C + VEHICLE_PRICE_C * VEHICLE_OPTION1_PRICE_SCALED + Range_C*Range_Scale_1 + R_time_C*R_time_Scale_1 + Cost_km_C*Cost_km_Scale_1 + Rebate_upfront_cost_C*Rebate_upfront_cost_Scale_1 + Rebate_parking_C*Rebate_parking_Scale_1 + Energy_bill_C*Energy_bill_Scale_1 + Penetration_C*Penetration_Scale_1 + Large_sedan_C*(alt1vhtype==2) + Small_SUV_C*(alt1vhtype==3) + Large_SUV_C*(alt1vhtype==4) 
-V2C = ASC_OPTION2_C + VEHICLE_PRICE_C * VEHICLE_OPTION2_PRICE_SCALED + Range_C*Range_Scale_2 + R_time_C*R_time_Scale_2 + Cost_km_C*Cost_km_Scale_2 + Rebate_upfront_cost_C*Rebate_upfront_cost_Scale_2 + Rebate_parking_C*Rebate_parking_Scale_2 + Energy_bill_C*Energy_bill_Scale_2 + Penetration_C*Penetration_Scale_2 + Large_sedan_C*(alt2vhtype==2) + Small_SUV_C*(alt2vhtype==3) + Large_SUV_C*(alt2vhtype==4)
+V1C = ASC_OPTION1_C + VEHICLE_PRICE_C * VEHICLE_OPTION1_PRICE_SCALED + Acc_bus_C*alt1acc + Range_C*Range_Scale_1 + R_time_C*R_time_Scale_1 + Cost_km_C*Cost_km_Scale_1 + Rebate_upfront_cost_C*Rebate_upfront_cost_Scale_1 + Rebate_parking_C*Rebate_parking_Scale_1 + Energy_bill_C*Energy_bill_Scale_1 + Penetration_C*Penetration_Scale_1 + Large_sedan_C*(alt1vhtype==2) + Small_SUV_C*(alt1vhtype==3) + Large_SUV_C*(alt1vhtype==4) 
+V2C = ASC_OPTION2_C + VEHICLE_PRICE_C * VEHICLE_OPTION2_PRICE_SCALED + Acc_bus_C*alt2acc + Range_C*Range_Scale_2 + R_time_C*R_time_Scale_2 + Cost_km_C*Cost_km_Scale_2 + Rebate_upfront_cost_C*Rebate_upfront_cost_Scale_2 + Rebate_parking_C*Rebate_parking_Scale_2 + Energy_bill_C*Energy_bill_Scale_2 + Penetration_C*Penetration_Scale_2 + Large_sedan_C*(alt2vhtype==2) + Small_SUV_C*(alt2vhtype==3) + Large_SUV_C*(alt2vhtype==4)
 V3C = ASC_OPTION3_C
 
 # Associate utility functions with the numbering of alternatives
@@ -253,9 +253,9 @@ R_time_E = Beta('R_time_E',0,-100,100,0,'R_time_E' )
 # Ava_fast_E = Beta('Ava_fast_E',0,-100,100,0,'Ava_fast_E' )
 Acc_bus_E = Beta('Acc_bus_E',0,-100,100,0,'Acc_bus_E' )
 Rebate_upfront_cost_E = Beta('Rebate_upfront_cost_E',0,-100,100,0,'Rebate_upfront_cost_E' )
-# Rebate_parking_E = Beta('Rebate_parking_E',0,-100,100,0,'Rebate_parking_E' )
+Rebate_parking_E = Beta('Rebate_parking_E',0,-100,100,0,'Rebate_parking_E' )
 Energy_bill_E = Beta('Energy_bill_E',0,-100,100,0,'Energy_bill_E' )
-# Stamp_duty_E = Beta('Stamp_duty_E',0,-100,100,0,'Stamp_duty_E' )
+Stamp_duty_E = Beta('Stamp_duty_E',0,-100,100,0,'Stamp_duty_E' )
 Penetration_E = Beta('Penetration_E',0,-100,100,0,'Penetration_E' )
 Small_Sedan_E = Beta('Small_Sedan_E',0,-100,100,0,'Small_Sedan_E' )
 Large_sedan_E = Beta('Large_sedan_E',0,-100,100,0,'Large_sedan_E' )
@@ -264,8 +264,8 @@ Small_SUV_E = Beta('Small_SUV_E',0,-100,100,0,'Small_SUV_E' )
 Small_hatch_E = Beta('Small_hatch_E',0,-100,100,0,'Small_hatch_E' )
 
 # Utility functions
-V1E = ASC_OPTION1_E + VEHICLE_PRICE_E * VEHICLE_OPTION1_PRICE_SCALED + Range_E*Range_Scale_1 + R_time_E*R_time_Scale_1 + Acc_bus_E*alt1acc + Rebate_upfront_cost_E*Rebate_upfront_cost_Scale_1 + Energy_bill_E*Energy_bill_Scale_1 + Penetration_E*Penetration_Scale_1+ Small_Sedan_E*(alt1vhtype==1) + Large_sedan_E*(alt1vhtype==2) + Small_SUV_E*(alt1vhtype==3) + Small_hatch_E*(alt1vhtype==5)
-V2E = ASC_OPTION2_E + VEHICLE_PRICE_E * VEHICLE_OPTION2_PRICE_SCALED + Range_E*Range_Scale_2 + R_time_E*R_time_Scale_2 + Acc_bus_E*alt2acc + Rebate_upfront_cost_E*Rebate_upfront_cost_Scale_2 + Energy_bill_E*Energy_bill_Scale_2 + Penetration_E*Penetration_Scale_2+ Small_Sedan_E*(alt2vhtype==1) + Large_sedan_E*(alt2vhtype==2) + Small_SUV_E*(alt2vhtype==3) + Small_hatch_E*(alt2vhtype==5) 
+V1E = ASC_OPTION1_E + VEHICLE_PRICE_E * VEHICLE_OPTION1_PRICE_SCALED + Stamp_duty_E*Stamp_duty_Scale_1 + Rebate_parking_E*Rebate_parking_Scale_1 + Range_E*Range_Scale_1 + R_time_E*R_time_Scale_1 + Acc_bus_E*alt1acc + Rebate_upfront_cost_E*Rebate_upfront_cost_Scale_1 + Energy_bill_E*Energy_bill_Scale_1 + Penetration_E*Penetration_Scale_1+ Small_Sedan_E*(alt1vhtype==1) + Large_sedan_E*(alt1vhtype==2) + Small_SUV_E*(alt1vhtype==3) + Small_hatch_E*(alt1vhtype==5)
+V2E = ASC_OPTION2_E + VEHICLE_PRICE_E * VEHICLE_OPTION2_PRICE_SCALED + Stamp_duty_E*Stamp_duty_Scale_2 + Rebate_parking_E*Rebate_parking_Scale_2 + Range_E*Range_Scale_2 + R_time_E*R_time_Scale_2 + Acc_bus_E*alt2acc + Rebate_upfront_cost_E*Rebate_upfront_cost_Scale_2 + Energy_bill_E*Energy_bill_Scale_2 + Penetration_E*Penetration_Scale_2+ Small_Sedan_E*(alt2vhtype==1) + Large_sedan_E*(alt2vhtype==2) + Small_SUV_E*(alt2vhtype==3) + Small_hatch_E*(alt2vhtype==5) 
 V3E = ASC_OPTION3_E
 
 # Associate utility functions with the numbering of alternatives
@@ -346,7 +346,7 @@ age_B = Beta('age_B',0,-100,100,0,'age_B' )
 second_hand_B = Beta('second_hand_B',0,-100,100,0,'second_hand_B' )
 # familiar_EV_B = Beta('familiar_EV_B',-0.579858,-100,100,0,'familiar_EV_B' )
 EV_common_q5_9_B = Beta('EV_common_q5_9_B',0.0318423,-100,100,0,'EV_common_q5_9_B' )
-# affordable_q5_10_1_B = Beta('affordable_q5_10_1_B',-1.13689,-100,100,0,'affordable_q5_10_1_B' )
+affordable_q5_10_1_B = Beta('affordable_q5_10_1_B',-1.13689,-100,100,0,'affordable_q5_10_1_B' )
 # longer_range_q5_10_2_B = Beta('longer_range_q5_10_2_B',0,-100,100,0,'longer_range_q5_10_2_B' )
 # infrastructure_q5_10_3_B = Beta('infrastructure_q5_10_3_B',0,-100,100,0,'infrastructure_q5_10_3_B' )
 # type_ev_q5_10_6_B = Beta('type_ev_q5_10_6_B',0,-100,100,0,'type_ev_q5_10_6_B' )
@@ -387,7 +387,7 @@ age_46_65_C = Beta('age_46_65_C',0,-100,100,0,'age_46_65_C' )
 # brand_new_C = Beta('brand_new_C',0,-100,100,0,'brand_new_C' )
 # second_hand_C = Beta('second_hand_C',-0.857057,-100,100,0,'second_hand_C' )
 familiar_EV_C = Beta('familiar_EV_C',0,-100,100,0,'familiar_EV_C' )
-# EV_common_q5_9_C = Beta('EV_common_q5_9_C',0,-100,100,0,'EV_common_q5_9_C' )
+EV_common_q5_9_C = Beta('EV_common_q5_9_C',0,-100,100,0,'EV_common_q5_9_C' )
 # affordable_q5_10_1_C = Beta('affordable_q5_10_1_C',0,-100,100,0,'affordable_q5_10_1_C' )
 # longer_range_q5_10_2_C = Beta('longer_range_q5_10_2_C',0,-100,100,0,'longer_range_q5_10_2_C' )
 infrastructure_q5_10_3_C = Beta('infrastructure_q5_10_3_C',0.818077,-100,100,0,'infrastructure_q5_10_3_C' )
@@ -422,15 +422,15 @@ certificate_C = Beta('certificate_C',0,-100,100,0,'certificate_C' )
 
 ##########################################CLASS D
 class_D = Beta('class_D', 0,-100, 100,0,'class_D' )
-# age_D = Beta('age_D', 0, -100, 100,0,'age_D' )
+age_D = Beta('age_D', 0, -100, 100,0,'age_D' )
 age_18_30_D = Beta('age_18_30_D', 0, -100, 100, 0, 'age_18_30_D' )
 age_31_45_D = Beta('age_31_45_D',0,-100,100,0,'age_31_45_D' )
-# age_46_65_D = Beta('age_46_65_D',0,-100,100,0,'age_46_65_D' )
+age_46_65_D = Beta('age_46_65_D',0,-100,100,0,'age_46_65_D' )
 brand_new_D = Beta('brand_new_D',0,-100,100,0,'brand_new_D' )
 second_hand_D = Beta('second_hand_D',0,-100,100,0,'second_hand_D' )
 familiar_EV_D = Beta('familiar_EV_D',0,-100,100,0,'familiar_EV_D' )
 # EV_common_q5_9_D = Beta('EV_common_q5_9_D',0,-100,100,0,'EV_common_q5_9_D' )
-# affordable_q5_10_1_D = Beta('affordable_q5_10_1_D',0,-100,100,0,'affordable_q5_10_1_D' )
+affordable_q5_10_1_D = Beta('affordable_q5_10_1_D',0,-100,100,0,'affordable_q5_10_1_D' )
 # longer_range_q5_10_2_D = Beta('longer_range_q5_10_2_D',0,-100,100,0,'longer_range_q5_10_2_D' )
 # infrastructure_q5_10_3_D = Beta('infrastructure_q5_10_3_D',0,-100,100,0,'infrastructure_q5_10_3_D' )
 # type_ev_q5_10_6_D = Beta('type_ev_q5_10_6_D',0,-100,100,0,'type_ev_q5_10_6_D' )
@@ -467,9 +467,9 @@ class_E = Beta('class_E',0,-100,100,1,'class_E' )
 
 # age = beta()
 prob1 = class_A + age_18_30_A*age_18_30 + age_31_45_A*age_31_45 + brand_new_A*brand_new + affordable_q5_10_1_A*affordable_q5_10_1 + modern_vehicle_A*modern_vehicle + modern_plus_A*modern_plus + full_autonomy_h_A*full_autonomy_h + single_hh_A*single_hh + incom_belo_104_A*incom_belo_104 + house_A*house
-prob2 = class_B + age_B*age + second_hand_B*second_hand + EV_common_q5_9_B*EV_common_q5_9 + modern_plus_B*modern_plus + support_ban_B*support_ban + female_B*female + incom_more_104_B*incom_more_104 + graduate_B*graduate + undergrad_B*undergrad + owned_out_B*owned_out + rent_B*rent
-prob3 = class_C + age_18_30_C*age_18_30 + age_31_45_C*age_31_45 + age_46_65_C*age_46_65 + familiar_EV_C*familiar_EV + infrastructure_q5_10_3_C*infrastructure_q5_10_3 + couple_no_kid_C*couple_no_kid + couple_kid_C*couple_kid + one_parent_C*one_parent + incom_belo_52_C*incom_belo_52 + undergrad_C*undergrad + certificate_C*certificate
-prob4 = class_D + age_18_30_D*age_18_30 + age_31_45_D*age_31_45 + brand_new_D*brand_new + second_hand_D*second_hand + familiar_EV_D*familiar_EV + human_only_D*human_only + modern_plus_D*modern_plus + support_ban_D*support_ban + couple_kid_D*couple_kid + single_hh_D*single_hh + income_cat_D*income_cat + fulltime_emp_D*fulltime_emp + owned_out_D*owned_out
+prob2 = class_B + age_B*age + affordable_q5_10_1_B*affordable_q5_10_1+ second_hand_B*second_hand + EV_common_q5_9_B*EV_common_q5_9 + modern_plus_B*modern_plus + support_ban_B*support_ban + female_B*female + incom_more_104_B*incom_more_104 + graduate_B*graduate + undergrad_B*undergrad + owned_out_B*owned_out + rent_B*rent
+prob3 = class_C + age_18_30_C*age_18_30 + age_31_45_C*age_31_45 + age_46_65_C*age_46_65 + EV_common_q5_9_C*EV_common_q5_9 + familiar_EV_C*familiar_EV + infrastructure_q5_10_3_C*infrastructure_q5_10_3 + couple_no_kid_C*couple_no_kid + couple_kid_C*couple_kid + one_parent_C*one_parent + incom_belo_52_C*incom_belo_52 + undergrad_C*undergrad + certificate_C*certificate
+prob4 = class_D + age_D*age + age_18_30_D*age_18_30 + age_31_45_D*age_31_45 + age_46_65_D*age_46_65 + affordable_q5_10_1_D*affordable_q5_10_1 + brand_new_D*brand_new + second_hand_D*second_hand + familiar_EV_D*familiar_EV + human_only_D*human_only + modern_plus_D*modern_plus + support_ban_D*support_ban + couple_kid_D*couple_kid + single_hh_D*single_hh + income_cat_D*income_cat + fulltime_emp_D*fulltime_emp + owned_out_D*owned_out
 prob5 = class_E
 
 probClass1 = exp(prob1)/(exp(prob1) + exp(prob2) + exp(prob3) + exp(prob4) + exp(prob5))
